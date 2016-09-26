@@ -9,8 +9,9 @@ namespace BankAccount
     class CheckingAccount : Account
     {
 
+
     //Fields
-        private string accountHolderName = "Scrooge McDuck";
+        //private string accountHolderName = "Scrooge McDuck";
         private int accountNumber = 8675309;
         private string accountType;
         private decimal balance = 65873592.52m;
@@ -34,7 +35,7 @@ namespace BankAccount
     //Constructors      
         public CheckingAccount()
         {
-
+            
         }
 
         //Methods

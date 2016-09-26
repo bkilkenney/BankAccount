@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace BankAccount
 {
@@ -15,11 +16,10 @@ namespace BankAccount
             CheckingAccount Check = new CheckingAccount();
 
 
-
             MainMenu();
         }
-            
-    //Methods:
+
+        //Methods:
         public static void MainMenu()  //Method for the main menu
         {
             Console.WriteLine("Welcome back Mr. McDuck, what would you like to do today?");
@@ -30,8 +30,18 @@ namespace BankAccount
 
             string response = Console.ReadLine();
 
+            
+          
+                   
+                
 
         }
+       
+        
+
     }
+
 }
+
+
 
