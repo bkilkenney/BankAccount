@@ -1,0 +1,6 @@
+Customer: Scrooge McDuck
+Account Type: Savings
+Account #: 13579
+Balance: $321432.43
+- 32.34 11/27/2016 4:33:15 PM
+Account Balance: 321400.09

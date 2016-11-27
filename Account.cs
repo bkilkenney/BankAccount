@@ -9,13 +9,15 @@ namespace BankAccount
     class Account
     {
    //Fields:
-        public string accountHolderName = "Scrooge McDuck";
-        private int accountNumber = 8675309;
-        private decimal balance = 5000.00m;
-
+        private string accountHolderName;
+        private decimal balance;
+        private string address = "123 Happy St., Mentor, OH. 44060";
+        private string email = "SMcDuck@gmail.com";
+        private string phone = "(555) 555-1234";
+        private int accountNumber;
 
    //Properties
-        public string AccountHolder
+        public string AccountHolderName
         {
             get { return this.accountHolderName; }
             set { this.accountHolderName = value; }
@@ -27,22 +29,35 @@ namespace BankAccount
         }
 
         //Constructors
-        public Account()
+        public Account(string accountHolderName)
         {
-
+            this.AccountHolderName = accountHolderName;
         }
         //Methods
 
-        public virtual decimal Deposit(decimal dollars)  //Method, override b/c it's the checkinig account's own version of Deposit()
+        public virtual decimal Deposit(decimal dollars)  //Virtual b/c it will be overriden with by inheriting classes
         {
             this.balance += dollars;
             return balance;           
         }
 
-        public virtual decimal Withdrawl(decimal dollars)  //Method, override b/c it's the checkinig account's own version of Deposit()
+        public virtual decimal Withdrawl(decimal dollars)  //Virtual b/c it will be overriden with by inheriting classes
         {
             this.balance -= dollars;
             return balance;
+        }
+
+        public virtual void ViewAccountBalance()
+        {
+            Console.WriteLine("Balance: " + balance);
+        }
+
+        public void CustomerInfo()
+        {
+            Console.WriteLine("Name: " + accountHolderName);
+            Console.WriteLine("Email: " + email);
+            Console.WriteLine("Phone: " + phone);
+            Console.WriteLine("Address: " + address);
         }
     }
 }

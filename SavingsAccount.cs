@@ -8,44 +8,50 @@ namespace BankAccount
 {
     class SavingsAccount : Account
     {
-    //Fields
-        //private string accountHolderName = "Scrooge McDuck";
-        private int accountNumber = 8675309;
-        private string accountType;
-        private decimal balance = 2000000000.00m;
+        //Fields
+        private int savingsAccountNumber;
+        private decimal savingsAccountBalance;
 
 
-    //Properties    
-        public int CheckingAccountNumber
+        //Properties    
+        public int SavingsAccountNumber
         {
-            get { return this.accountNumber; }
-            set { this.accountNumber = value; }
+            get { return this.savingsAccountNumber; }
+            set { this.savingsAccountNumber = value; }
         }
 
-        public string Type
+        public decimal SavingsAccountBalance
         {
-            get { return this.accountType; }
-            set { this.accountType = value; }
+            get { return this.savingsAccountBalance; }
+            set { this.savingsAccountBalance = value; }
         }
 
-    //Constructors      
-        public SavingsAccount()
+        //Constructors      
+        public SavingsAccount(string accountHolderName) : base(accountHolderName)
         {
-
+            this.savingsAccountNumber = 13579;
+            this.savingsAccountBalance = 321432.43m;
         }
 
-    //Methods
+        //Methods
 
         public override decimal Deposit(decimal dollars)  //Method, override b/c it's the checkinig account's own version of Deposit()
-        {                                                 //Must return a decimal
-            this.balance += dollars;
-            return balance;
+        {
+            this.savingsAccountBalance += dollars;
+            return this.savingsAccountBalance;
         }
 
-        public override decimal Withdrawl(decimal dollars)  
+        public override decimal Withdrawl(decimal dollars)  //Method, override b/c it's the checkinig account's own version of Deposit()
         {
-            this.balance -= dollars;
-            return balance;
+            this.savingsAccountBalance -= dollars;
+            return this.savingsAccountBalance;
         }
+
+        public override void ViewAccountBalance()
+        {
+            Console.WriteLine("Savings account balance: $" + SavingsAccountBalance);
+        }
+
+
     }
 }

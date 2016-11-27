@@ -8,45 +8,49 @@ namespace BankAccount
 {
     class ReserveAccount : Account
     {
-    
-    //Fields
-        //private string accountHolderName = "Scrooge McDuck";
-        private int accountNumber = 8675309;
-        private string accountType;
-        private decimal balance = 101382.05m;
+
+        //Fields
+        private int reserveAccountNumber;
+        private decimal reserveAccountBalance;
 
 
-    //Properties    
-        public int CheckingAccountNumber
+        //Properties    
+        public int ReserveAccountNumber
         {
-            get { return this.accountNumber; }
-            set { this.accountNumber = value; }
+            get { return this.reserveAccountNumber; }
+            set { this.reserveAccountNumber = value; }
         }
 
-        public string Type
+        public decimal ReserveAccountBalance
         {
-            get { return this.accountType; }
-            set { this.accountType = value; }
+            get { return this.reserveAccountBalance; }
+            set { this.reserveAccountBalance = value; }
         }
 
-    //Constructors      
-        public ReserveAccount()
+        //Constructors      
+        public ReserveAccount(string accountHolderName) : base(accountHolderName)
         {
-
+            this.reserveAccountNumber = 12345;
+            this.reserveAccountBalance = 150.48m;
         }
 
-    //Methods
+        //Methods
 
         public override decimal Deposit(decimal dollars)  //Method, override b/c it's the checkinig account's own version of Deposit()
         {
-            this.balance += dollars;
-            return balance;
+            this.reserveAccountBalance += dollars;
+            return this.reserveAccountBalance;
         }
 
         public override decimal Withdrawl(decimal dollars)  //Method, override b/c it's the checkinig account's own version of Deposit()
         {
-            this.balance -= dollars;
-            return balance;
+            this.reserveAccountBalance -= dollars;
+            return this.reserveAccountBalance;
+        }
+
+        public override void ViewAccountBalance()
+        {
+            Console.WriteLine("Reserve account balance: $" + ReserveAccountBalance);
         }
     }
 }

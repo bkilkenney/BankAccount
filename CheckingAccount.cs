@@ -11,50 +11,50 @@ namespace BankAccount
 
 
     //Fields
-        //private string accountHolderName = "Scrooge McDuck";
-        private int accountNumber = 8675309;
-        private string accountType;
-        private decimal balance = 65873592.52m;
+        private int checkingAccountNumber;
+        private decimal checkingAccountBalance;
 
 
     //Properties    
         public int CheckingAccountNumber
         {
-            get { return this.accountNumber; }
-            set { this.accountNumber = value; }
+            get { return this.checkingAccountNumber; }
+            set { this.checkingAccountNumber = value; }
         }
 
-        internal void Deposit()
+        public decimal CheckingAccountBalance
         {
-            throw new NotImplementedException();
+            get { return this.checkingAccountBalance; }
+            set { this.checkingAccountBalance = value; }
         }
 
-        public string Type
-        {
-            get { return this.accountType; }
-            set { this.accountType = value; }
-        }
-       
-
-      
     //Constructors      
-        public CheckingAccount()
+        public CheckingAccount(string accountHolderName) : base(accountHolderName)
         {
-            
+            this.checkingAccountNumber = 24680;
+            this.checkingAccountBalance = 5437.95m;
         }
 
         //Methods
 
         public override decimal Deposit(decimal dollars)  //Method, override b/c it's the checkinig account's own version of Deposit()
         {
-            this.balance += dollars;
-            return balance;
+            this.checkingAccountBalance += dollars;
+            return this.checkingAccountBalance;
         }
 
         public override decimal Withdrawl(decimal dollars)  //Method, override b/c it's the checkinig account's own version of Deposit()
         {
-            this.balance -= dollars;
-            return balance;
+            this.checkingAccountBalance -= dollars;
+            return this.checkingAccountBalance;
         }
+
+        public override void ViewAccountBalance()
+        {
+            Console.WriteLine("Checking account balance: $" + CheckingAccountBalance);
+        }
+
+
+
     }
 }
