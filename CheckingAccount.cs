@@ -24,6 +24,11 @@ namespace BankAccount
             set { this.accountNumber = value; }
         }
 
+        internal void Deposit()
+        {
+            throw new NotImplementedException();
+        }
+
         public string Type
         {
             get { return this.accountType; }

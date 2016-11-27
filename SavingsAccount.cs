@@ -9,7 +9,7 @@ namespace BankAccount
     class SavingsAccount : Account
     {
     //Fields
-        private string accountHolderName = "Scrooge McDuck";
+        //private string accountHolderName = "Scrooge McDuck";
         private int accountNumber = 8675309;
         private string accountType;
         private decimal balance = 2000000000.00m;

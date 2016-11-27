@@ -17,6 +17,9 @@ namespace BankAccount
 
 
             MainMenu();
+
+            while (true)
+                Check.Deposit();
         }
 
         //Methods:
