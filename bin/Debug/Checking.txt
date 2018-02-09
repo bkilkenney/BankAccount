@@ -1,6 +1,0 @@
-Customer: Scrooge McDuck
-Account Type: Checking
-Account #: 24680
-Balance: $5437.95
-+ 5834.23 11/27/2016 4:33:00 PM
-Account Balance: 11272.18

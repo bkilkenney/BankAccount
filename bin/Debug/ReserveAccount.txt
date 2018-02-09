@@ -1,4 +1,0 @@
-Customer: Scrooge McDuck
-Account Type: Reserve
-Account #: 12345
-Balance: $150.48
